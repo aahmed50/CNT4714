@@ -41,26 +41,24 @@ public class Order {
     //setFinishOrder
     public void setFinishOrder(String date, String time) {
         this.setOrderTotal();
-        this.finishOrder.append("Date: " + date + " " + time);
+        this.finishOrder.append("NileDotCom");
+        this.finishOrder.append(System.getProperty("line.separator"));        
+        this.finishOrder.append(System.getProperty("line.separator"));
+        this.finishOrder.append("Date: " + date + " | " + "Time: " + time);
         this.finishOrder.append(System.getProperty("line.separator"));
         this.finishOrder.append(System.getProperty("line.separator"));
         this.finishOrder.append("Number of items: " + this.getTotalItems());
         this.finishOrder.append(System.getProperty("line.separator"));
         this.finishOrder.append(System.getProperty("line.separator"));
-        this.finishOrder.append("Item# /ID / Price / Qty / Disc % / Subtotal");
-        this.finishOrder.append(System.getProperty("line.separator"));
+        this.finishOrder.append("Item # / ID / Price / Quantity / Discount % / Subtotal");
         this.finishOrder.append(System.getProperty("line.separator"));
         this.finishOrder.append(this.getViewOrder());
         this.finishOrder.append(System.getProperty("line.separator"));
-        this.finishOrder.append(System.getProperty("line.separator"));
         this.finishOrder.append("Order subtotal:   $" + new DecimalFormat("#0.00").format(this.getOrderSubtotal()));
         this.finishOrder.append(System.getProperty("line.separator"));
+        this.finishOrder.append("Tax Rate: 6%");
         this.finishOrder.append(System.getProperty("line.separator"));
-        this.finishOrder.append("Tax Rate:   6%");
-        this.finishOrder.append(System.getProperty("line.separator"));
-        this.finishOrder.append(System.getProperty("line.separator"));
-        this.finishOrder.append("Tax Amount: " + new DecimalFormat("#0.00").format(this.getOrderTotal() * 0.06));
-        this.finishOrder.append(System.getProperty("line.separator"));
+        this.finishOrder.append("Tax: " + new DecimalFormat("#0.00").format(this.getOrderTotal() * 0.06));
         this.finishOrder.append(System.getProperty("line.separator"));
         this.finishOrder.append("Order total:      $" + new DecimalFormat("#0.00").format(this.getOrderTotal()));
         this.finishOrder.append(System.getProperty("line.separator"));
@@ -102,7 +100,7 @@ public class Order {
 	>=15 = 20% 
      */
     
-    //getTotalDiscount
+    //getTotalDiscount | calculates discount
     public double getTotalDiscount(int quantity, double itemPrice){
         if (quantity >= 1 && quantity <= 4){
             return (quantity * itemPrice);
@@ -120,7 +118,7 @@ public class Order {
         return 0.0;
     }//close getTotalDiscount
     
-    //getDiscountPercentage 
+    //getDiscountPercentage | displays discount 
     public int getDiscountPercentage(int quantity){
         if (quantity >= 1 && quantity <= 4){
             return 0;

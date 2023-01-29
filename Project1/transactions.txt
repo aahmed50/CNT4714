@@ -1,0 +1,4 @@
+230128231858, 14 , "Stanley #2 Philips Screwdriver", 6.95 , 2 , 0 , 13.9 , 01/28/23, 06:58:34 PM EST
+230128232002, 14 , "Stanley #2 Philips Screwdriver", 6.95 , 1 , 0 , 6.95 , 01/28/23, 08:02:40 PM EST
+230128232002, 23 , "Tamiya 2oz paint - ferrari red", 2.39 , 2 , 0 , 4.78 , 01/28/23, 08:02:40 PM EST
+230128232002, 67YX22 , "DTM Calendar for 2023", 14.95 , 1 , 0 , 14.95 , 01/28/23, 08:02:40 PM EST

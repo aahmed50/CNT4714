@@ -14,10 +14,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.DecimalFormat;
+import javax.swing.border.EtchedBorder;
 
 
-public class NileDotCom extends JFrame{
-	//private String inventoryFile = "inventory.txt";
+public class NileDotCom extends JFrame {
+		//private String inventoryFile = "inventory.txt";
 		private ArrayList<Item> inventory;
 		private Order order = new Order();
 		
@@ -43,48 +44,119 @@ public class NileDotCom extends JFrame{
 
 		//-----------------------------------------------------------------------------------//
 		
-		//constructor
+		//interface
 		public NileDotCom() throws FileNotFoundException{
+			setTitle("NileDotCom | Spring 2023");
+			setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 			this.inventoryFromFile(); //initialize inventory
 			
-			//create JPanel p1 5x2 grid
-			JPanel p1 = new JPanel(new GridLayout(5, 2));
+			//create JPanel for fields
+			JPanel fieldsPanel = new JPanel();
+			fieldsPanel.setBounds(145, 21, 400, 105);
+			fieldsPanel.setLayout(null);
+			jlbItemID.setFont(new Font("Consolas", Font.PLAIN, 10));
+			jlbItemID.setBounds(0, 4, 191, 21);
+			jlbItemID.setHorizontalAlignment(SwingConstants.RIGHT);
 			
 			//JLabels & JTextField Boxes
-			p1.add(jlbItemID);
-			p1.add(jtfItemID);
+			fieldsPanel.add(jlbItemID);
+			jtfItemID.setBounds(201, 4, 189, 21);
+			fieldsPanel.add(jtfItemID);
+			jlbQuantity.setFont(new Font("Consolas", Font.PLAIN, 10));
+			jlbQuantity.setBounds(0, 29, 191, 21);
+			jlbQuantity.setHorizontalAlignment(SwingConstants.RIGHT);
 			
-			p1.add(jlbQuantity);
-			p1.add(jtfQuantity);
+			fieldsPanel.add(jlbQuantity);
+			jtfQuantity.setBounds(201, 29, 189, 21);
+			fieldsPanel.add(jtfQuantity);
+			jlbItemDetails.setFont(new Font("Consolas", Font.PLAIN, 10));
+			jlbItemDetails.setBounds(0, 54, 191, 21);
+			jlbItemDetails.setHorizontalAlignment(SwingConstants.RIGHT);
 			
-			p1.add(jlbItemDetails);
-			p1.add(jtfItemDetails);
+			fieldsPanel.add(jlbItemDetails);
+			jtfItemDetails.setBounds(201, 54, 189, 21);
+			fieldsPanel.add(jtfItemDetails);
+			jlbSubtotal.setFont(new Font("Consolas", Font.PLAIN, 10));
+			jlbSubtotal.setBounds(0, 79, 191, 21);
+			jlbSubtotal.setHorizontalAlignment(SwingConstants.RIGHT);
+			fieldsPanel.add(jlbSubtotal);
+			jtfTotalItems.setBounds(201, 79, 189, 21);
+			fieldsPanel.add(jtfTotalItems);
 			
-			p1.add(jlbSubtotal);
-			p1.add(jtfTotalItems);
-			
-			//create JPanel p2 
-			JPanel p2 = new JPanel(new FlowLayout(FlowLayout.CENTER)); 
+			//create JPanel for button menu 
+			JPanel buttonsPanel = new JPanel(); 
+			buttonsPanel.setBounds(145, 140, 400, 70);
+			buttonsPanel.setLayout(null);
+			jbtProcessItem.setBackground(new Color(255, 255, 255));
+			jbtProcessItem.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			jbtProcessItem.setBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(64, 128, 128)));
+			jbtProcessItem.setFont(new Font("Consolas", Font.BOLD, 7));
+			jbtProcessItem.setBounds(18, 9, 109, 21);
 			
 			//JButtons
-			p2.add(jbtProcessItem);
-			p2.add(jbtConfirmItem);
-			p2.add(jbtViewOrder);
-			p2.add(jbtFinishOrder);
-			p2.add(jbtNewOrder);
-			p2.add(jbtExit);
+			buttonsPanel.add(jbtProcessItem);
+			jbtConfirmItem.setBackground(new Color(255, 255, 255));
+			jbtConfirmItem.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			jbtConfirmItem.setBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(64, 128, 128)));
+			jbtConfirmItem.setFont(new Font("Consolas", Font.BOLD, 7));
+			jbtConfirmItem.setBounds(18, 39, 109, 21);
+			buttonsPanel.add(jbtConfirmItem);
+			jbtViewOrder.setBackground(new Color(255, 255, 255));
+			jbtViewOrder.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			jbtViewOrder.setBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(64, 128, 128)));
+			jbtViewOrder.setFont(new Font("Consolas", Font.BOLD, 7));
+			jbtViewOrder.setBounds(145, 9, 109, 21);
+			buttonsPanel.add(jbtViewOrder);
+			jbtFinishOrder.setBackground(new Color(255, 255, 255));
+			jbtFinishOrder.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			jbtFinishOrder.setBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(64, 128, 128)));
+			jbtFinishOrder.setFont(new Font("Consolas", Font.BOLD, 7));
+			jbtFinishOrder.setBounds(145, 39, 109, 21);
+			buttonsPanel.add(jbtFinishOrder);
+			jbtNewOrder.setBackground(new Color(255, 255, 255));
+			jbtNewOrder.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			jbtNewOrder.setBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(64, 128, 128)));
+			jbtNewOrder.setFont(new Font("Consolas", Font.BOLD, 7));
+			jbtNewOrder.setBounds(272, 9, 109, 21);
+			buttonsPanel.add(jbtNewOrder);
+			jbtExit.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			jbtExit.setBackground(new Color(174, 215, 215));
+			jbtExit.setBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(64, 128, 128)));
+			jbtExit.setFont(new Font("Consolas", Font.BOLD, 7));
+			jbtExit.setBounds(272, 39, 109, 21);
+			buttonsPanel.add(jbtExit);
 			
 				//disable default behavior
 				this.jbtConfirmItem.setEnabled(false);
 				this.jbtViewOrder.setEnabled(false);
 				this.jbtFinishOrder.setEnabled(false);
+				getContentPane().setLayout(null);
 				//this.jbtNewOrder.setEnabled(false);
 				this.jtfTotalItems.setEnabled(false);
 				this.jtfItemDetails.setEditable(false);
+			
+			//decorative panel
+			JLabel companel = new JLabel();
+			companel.setBounds(-157, -104, 514, 449);
+			companel.setIcon(new ImageIcon("logo.png"));
+
+			//ImageIcon image = new ImageIcon("logo-white.png"); //create icon
+			//frame.setIconImage(image.getImage()); //change icon of frame
 				
 			//design - add to frame
-			add(p1, BorderLayout.NORTH);
-			add(p2, BorderLayout.SOUTH);
+			getContentPane().add(fieldsPanel);
+			getContentPane().add(buttonsPanel);
+			getContentPane().add(companel);
+
+			//decorative label
+			JLabel thankYou = new JLabel("Thank You for Shopping at NileDotCom!");
+			thankYou.setHorizontalTextPosition(SwingConstants.RIGHT);
+			thankYou.setHorizontalAlignment(SwingConstants.RIGHT);
+			thankYou.setFont(new Font("Consolas", Font.ITALIC, 15));
+			thankYou.setBounds(145, 230, 393, 20);
+			getContentPane().add(thankYou);
+			
+			
 			
 			//button actionListeners
 			//processItem actionListener
@@ -94,7 +166,7 @@ public class NileDotCom extends JFrame{
 				public void actionPerformed(ActionEvent e) {
 					
 					//parse .txt file
-					int itemID = Integer.parseInt(jtfItemID.getText());
+					String itemID = String.valueOf(jtfItemID.getText());
 					int itemQuantity = Integer.parseInt(jtfQuantity.getText()); //quantityOfItem
 					
 					int itemIndex = linearSearch(itemID);
@@ -103,7 +175,7 @@ public class NileDotCom extends JFrame{
 					System.out.println(itemIndex);
 					if(itemIndex != -1) {
 						Item foundItem = inventory.get(itemIndex);
-						order.setItemInfo(foundItem.getItemID() + "", foundItem.getName(), foundItem.getPrice() + "", itemQuantity + "", order.getDiscountPercentage(itemQuantity) + "", order.getTotalDiscount(itemQuantity, foundItem.getPrice()) + "");
+						order.setItemInfo(foundItem.getItemID() + " ", foundItem.getName(), foundItem.getPrice() + " ", itemQuantity + " ", order.getDiscountPercentage(itemQuantity) + " ", order.getTotalDiscount(itemQuantity, foundItem.getPrice()) + " ");
 						String itemInfo = foundItem.getItemID() + foundItem.getName() + " $" + foundItem.getPrice() + " " + itemQuantity + " " + order.getDiscountPercentage(itemQuantity) + "%" + order.getTotalDiscount(itemQuantity, foundItem.getPrice());
 						jtfItemDetails.setText(itemInfo);
 						jbtConfirmItem.setEnabled(true);
@@ -215,16 +287,26 @@ public class NileDotCom extends JFrame{
 		//-------------------------------------------------------------------//
 
 		//linearSearch returns integer
-		public int linearSearch(int itemID) {
+		public int linearSearch(String itemID) {
 			for(int i=0; i < this.inventory.size(); i++) {
 				Item currentItem = inventory.get(i);
-				int currentItemID = Integer.parseInt((currentItem.getItemID()));
-				if(currentItemID == itemID) {
+				String currentItemID = String.valueOf((currentItem.getItemID()));
+				if(currentItemID.equals(itemID)) {
 					return i;
 				}//close if
 			}//close for loop
 			return -1;
-		}//close linearSearch
+		}//close linearSearch 
+		
+		//cycle through
+		/* public Item linearSearch(String itemID) {
+			for(Item currentItem:inventory) {
+				if(currentItem.getItemID() == itemID)
+					return currentItem;
+			}
+			return new Item();
+		}
+		*/
 		
 		//inventory from file
 		public void inventoryFromFile() throws FileNotFoundException {
@@ -239,7 +321,7 @@ public class NileDotCom extends JFrame{
 				
 				//grab next line & parse into strings separated by comma
 				String item = textFile.nextLine();
-				String[] itemDetails = item.split(",");
+				String[] itemDetails = item.split(", ");
 				
 				//create new Item
 				//Each line in this file contains four entries: item id (a string), quoted string description, in stock status (a string), and the unit price (a double)
@@ -255,10 +337,10 @@ public class NileDotCom extends JFrame{
 			textFile.close(); //close scanner
 			
 			//test
-			for(int i = 0 ; i < inventory.size(); i++){
-				Item current = inventory.get(i);
-				System.out.println(current.getItemID() + ", " + current.getName() + ", " + current.getPrice());
-			}//close test
+			//for(int i = 0 ; i < inventory.size(); i++){
+				//Item current = inventory.get(i);
+				//System.out.println(current.getItemID() + ", " + current.getName() + ", " + current.getPrice());
+			//}//close test
 		}//close inventoryFromFile
 		
 		//getInventory
@@ -281,11 +363,15 @@ public class NileDotCom extends JFrame{
 		
 		frame.pack(); //fit to screen
 		frame.setLocationRelativeTo(null); //center on screen
-		frame.setTitle("Nile Dot Com | Spring 2023"); //frame title
+		frame.setTitle("NileDotCom | Spring 2023"); //frame title
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); //close window w/o exiting program
 		frame.setVisible(true); //display window
+		frame.setSize(570, 300); //frame size
+		frame.setResizable(false); //disable resize
+		frame.getContentPane().setBackground(new Color(95, 158, 160)); //background color
 		
-		ImageIcon image = new ImageIcon("logo.png"); //create icon
+		
+		ImageIcon image = new ImageIcon("logo-white.png"); //create icon
 		frame.setIconImage(image.getImage()); //change icon of frame
 		
 		/*tester GUI
@@ -301,4 +387,5 @@ public class NileDotCom extends JFrame{
 		*/
 		
 	}//close main
+    private static final long serialVersionUID = 1L;
 }//close NileDotCom
