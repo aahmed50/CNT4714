@@ -9,3 +9,15 @@
 230128232228, 1111 , "Top Secret Twenty One - Janet Evanovich", 8.99 , 1 , 0 , 8.99 , 01/28/23, 10:28:14 PM EST
 230128232228, 387 , "Brachs butterscotch hard candy - 1 lb", 4.5 , 2 , 0 , 9.0 , 01/28/23, 10:28:14 PM EST
 230128232228, 198 , "Box of 10 Sharpie Roller 0.5mm", 6.5 , 12 , 15 , 11.7 , 01/28/23, 10:28:14 PM EST
+230128232230, 14 , "Stanley #2 Philips Screwdriver", 6.95 , 1 , 0 , 6.95 , 01/28/23, 10:30:50 PM EST
+230128232230, 198 , "Box of 10 Sharpie Roller 0.5mm", 6.5 , 20 , 20 , 26.0 , 01/28/23, 10:30:50 PM EST
+230128232230, 23 , "Tamiya 2oz paint - ferrari red", 2.39 , 12 , 15 , 4.302 , 01/28/23, 10:30:50 PM EST
+230128232230, 1111 , "Top Secret Twenty One - Janet Evanovich", 8.99 , 12 , 15 , 16.182 , 01/28/23, 10:30:50 PM EST
+230128232232, 198 , "Box of 10 Sharpie Roller 0.5mm", 6.5 , 22 , 20 , 28.6 , 01/28/23, 10:32:15 PM EST
+230128232232, 198 , "Box of 10 Sharpie Roller 0.5mm", 6.5 , 22 , 20 , 28.6 , 01/28/23, 10:32:15 PM EST
+230128232232, 268 , "Sidi Wire 2 carbon shoes", 499.99 , 3 , 0 , 1499.97 , 01/28/23, 10:32:15 PM EST
+230128232232, RTX3452 , "Laser Pointer", 38.8 , 2 , 0 , 77.6 , 01/28/23, 10:32:15 PM EST
+230128232232, 19981 , "Pledge furniture polish 13oz", 6.5 , 23 , 20 , 29.900000000000002 , 01/28/23, 10:32:15 PM EST
+230128232233, 7654 , "Bell Stratos helmet - size Lg - blue", 230.0 , 12 , 15 , 414.0 , 01/28/23, 10:33:57 PM EST
+230128232233, 22389 , "Swingline Model B2200 stapler", 18.0 , 100 , 20 , 360.0 , 01/28/23, 10:33:57 PM EST
+230128232233, 198 , "Box of 10 Sharpie Roller 0.5mm", 6.5 , 5 , 10 , 3.25 , 01/28/23, 10:33:57 PM EST
