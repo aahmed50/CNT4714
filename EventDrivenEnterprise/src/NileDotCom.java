@@ -26,7 +26,7 @@ public class NileDotCom extends JFrame {
 		//text boxes
 		private JTextField jtfItemID = new JTextField();
 		private JTextField jtfQuantity = new JTextField();
-		private JTextField jtfItemDetails = new JTextField();
+		private JTextField jtfItemDetails = new JTextField(); //ItemInfo
 		private JTextField jtfTotalItems = new JTextField();
 		
 		//buttons
@@ -41,47 +41,46 @@ public class NileDotCom extends JFrame {
 		JLabel jlbItemID = new JLabel("Enter Item ID for Item #1");
 		JLabel jlbQuantity = new JLabel("Enter Quantity for Item #1");
 		JLabel jlbItemDetails= new JLabel("Enter Item Details for Item #1");
-		JLabel jlbSubtotal = new JLabel("Enter Subtotal for Item #1");
+		JLabel jlbSubtotal = new JLabel("Enter Subtotal for Item #1"); //jlbSubtotal
 
-		//--------------------------Main JFrame---------------------------------//
-		
-		//interface (main JFrame)
+		//--------------------------Main JFrame---------------------------------//		
+		//interface
 		public NileDotCom() throws FileNotFoundException{
 			
 			this.inventoryFromFile(); //initialize inventory
 			
 			//create JPanel for fields
 			JPanel fieldsPanel = new JPanel();
-			fieldsPanel.setBounds(145, 20, 400, 105);
+			fieldsPanel.setBounds(145, 21, 400, 105);
 			fieldsPanel.setLayout(null);
 			
 			//JLabels & JTextField Boxes
 			jlbItemID.setFont(new Font("Consolas", Font.PLAIN, 10));
-			jlbItemID.setBounds(0, 5, 190, 20);
+			jlbItemID.setBounds(0, 4, 191, 21);
 			jlbItemID.setHorizontalAlignment(SwingConstants.RIGHT);
 			fieldsPanel.add(jlbItemID);
-			jtfItemID.setBounds(200, 5, 190, 20);
+			jtfItemID.setBounds(201, 4, 189, 21);
 			fieldsPanel.add(jtfItemID);
 			
 			jlbQuantity.setFont(new Font("Consolas", Font.PLAIN, 10));
-			jlbQuantity.setBounds(0, 30, 190, 20);
+			jlbQuantity.setBounds(0, 29, 191, 21);
 			jlbQuantity.setHorizontalAlignment(SwingConstants.RIGHT);
 			fieldsPanel.add(jlbQuantity);
-			jtfQuantity.setBounds(200, 30, 190, 20);
+			jtfQuantity.setBounds(201, 29, 189, 21);
 			fieldsPanel.add(jtfQuantity);
 			
 			jlbItemDetails.setFont(new Font("Consolas", Font.PLAIN, 10));
-			jlbItemDetails.setBounds(0, 55, 190, 20);
+			jlbItemDetails.setBounds(0, 54, 191, 21);
 			jlbItemDetails.setHorizontalAlignment(SwingConstants.RIGHT);
 			fieldsPanel.add(jlbItemDetails);
-			jtfItemDetails.setBounds(200, 55, 190, 20);
+			jtfItemDetails.setBounds(201, 54, 189, 21);
 			fieldsPanel.add(jtfItemDetails);
 			
 			jlbSubtotal.setFont(new Font("Consolas", Font.PLAIN, 10));
-			jlbSubtotal.setBounds(0, 80, 190, 20);
+			jlbSubtotal.setBounds(0, 79, 191, 21);
 			jlbSubtotal.setHorizontalAlignment(SwingConstants.RIGHT);
 			fieldsPanel.add(jlbSubtotal);
-			jtfTotalItems.setBounds(200, 80, 190, 20);
+			jtfTotalItems.setBounds(201, 79, 189, 21);
 			fieldsPanel.add(jtfTotalItems);
 			
 			//create JPanel for button menu 
@@ -94,49 +93,49 @@ public class NileDotCom extends JFrame {
 			jbtProcessItem.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			jbtProcessItem.setBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(64, 128, 128)));
 			jbtProcessItem.setFont(new Font("Consolas", Font.BOLD, 7));
-			jbtProcessItem.setBounds(20, 10, 110, 20);
+			jbtProcessItem.setBounds(18, 9, 109, 21);
 			buttonsPanel.add(jbtProcessItem);
-			
+						
 			jbtConfirmItem.setBackground(new Color(255, 255, 255));
 			jbtConfirmItem.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			jbtConfirmItem.setBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(64, 128, 128)));
 			jbtConfirmItem.setFont(new Font("Consolas", Font.BOLD, 7));
-			jbtConfirmItem.setBounds(20, 40, 110, 20);
+			jbtConfirmItem.setBounds(18, 39, 109, 21);
 			buttonsPanel.add(jbtConfirmItem);
 			
 			jbtViewOrder.setBackground(new Color(255, 255, 255));
 			jbtViewOrder.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			jbtViewOrder.setBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(64, 128, 128)));
 			jbtViewOrder.setFont(new Font("Consolas", Font.BOLD, 7));
-			jbtViewOrder.setBounds(145, 10, 110, 20);
+			jbtViewOrder.setBounds(145, 9, 109, 21);
 			buttonsPanel.add(jbtViewOrder);
 			
 			jbtFinishOrder.setBackground(new Color(255, 255, 255));
 			jbtFinishOrder.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			jbtFinishOrder.setBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(64, 128, 128)));
 			jbtFinishOrder.setFont(new Font("Consolas", Font.BOLD, 7));
-			jbtFinishOrder.setBounds(145, 40, 110, 20);
+			jbtFinishOrder.setBounds(145, 39, 109, 21);
 			buttonsPanel.add(jbtFinishOrder);
 			
 			jbtNewOrder.setBackground(new Color(255, 255, 255));
 			jbtNewOrder.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			jbtNewOrder.setBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(64, 128, 128)));
 			jbtNewOrder.setFont(new Font("Consolas", Font.BOLD, 7));
-			jbtNewOrder.setBounds(270, 10, 110, 20);
+			jbtNewOrder.setBounds(272, 9, 109, 21);
 			buttonsPanel.add(jbtNewOrder);
 			
 			jbtExit.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			jbtExit.setBackground(new Color(174, 215, 215));
 			jbtExit.setBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(64, 128, 128)));
 			jbtExit.setFont(new Font("Consolas", Font.BOLD, 7));
-			jbtExit.setBounds(270, 40, 110, 20);
+			jbtExit.setBounds(272, 39, 109, 21);
 			buttonsPanel.add(jbtExit);
 			
 				//disable default behavior
-				getContentPane().setLayout(null);
 				this.jbtConfirmItem.setEnabled(false);
 				this.jbtViewOrder.setEnabled(false);
 				this.jbtFinishOrder.setEnabled(false);
+				getContentPane().setLayout(null);
 				this.jtfTotalItems.setEnabled(false);
 				this.jtfItemDetails.setEditable(false);
 			
@@ -155,7 +154,7 @@ public class NileDotCom extends JFrame {
 			thankYou.setHorizontalTextPosition(SwingConstants.RIGHT);
 			thankYou.setHorizontalAlignment(SwingConstants.RIGHT);
 			thankYou.setFont(new Font("Consolas", Font.ITALIC, 15));
-			thankYou.setBounds(145, 230, 390, 20);
+			thankYou.setBounds(145, 230, 393, 20);
 			getContentPane().add(thankYou);
 			
 			//--------------------------Action Listeners---------------------------------//
@@ -170,14 +169,15 @@ public class NileDotCom extends JFrame {
 					String itemID = String.valueOf(jtfItemID.getText());
 					int itemQuantity = Integer.parseInt(jtfQuantity.getText());
 					
-					int itemIndex = linearSearch(itemID); //call linearSearch function
+					int itemIndex = linearSearch(itemID); //call linearSearch
 					
-					System.out.println(itemIndex); //print index
+					System.out.println(itemIndex);
 					
+					//check inventory
 					if(itemIndex != -1) {
 						Item foundItem = inventory.get(itemIndex);
 						order.setItemInfo(foundItem.getItemID() + " ", foundItem.getName(), foundItem.getPrice() + " ", itemQuantity + " ", order.getDiscountPercentage(itemQuantity) + " ", order.getTotalDiscount(itemQuantity, foundItem.getPrice()) + " ");
-						String itemInfo = foundItem.getItemID() + foundItem.getName() + " $" + foundItem.getPrice() + " " + itemQuantity + " " + order.getDiscountPercentage(itemQuantity) + " %" + order.getTotalDiscount(itemQuantity, foundItem.getPrice());
+						String itemInfo = foundItem.getItemID() + foundItem.getName() + " $" + foundItem.getPrice() + " " + itemQuantity + " " + order.getDiscountPercentage(itemQuantity) + "%" + order.getTotalDiscount(itemQuantity, foundItem.getPrice());
 						jtfItemDetails.setText(itemInfo);
 						jbtConfirmItem.setEnabled(true);
 						jbtProcessItem.setEnabled(false);
@@ -186,8 +186,8 @@ public class NileDotCom extends JFrame {
 						jtfTotalItems.setEnabled(false);
 					}//oof
 					else {
-						JOptionPane.showMessageDialog(null, "Item ID " + itemID + " is not in the file.");
-					}//else
+						JOptionPane.showMessageDialog(null, "Item ID " + itemID + " could not be found.");
+					}//else			
 				}//close actionPerformed
 			});//close processItem actionListener
 
@@ -204,28 +204,28 @@ public class NileDotCom extends JFrame {
 
 					JOptionPane.showMessageDialog(null, "Item #" +  order.getTotalItems() + " accepted." + " Added to your cart.");
 					
-					// Prepares transaction.txt line
+					//transaction.txt
 					order.prepareInvoice();
 
-					// Adds item to viewOrder
+					//adds item to viewOrder dialog
 					order.addToViewOrder(jtfItemDetails.getText());
 					
-					// Enable Buttons
+					//configure buttons
 					jbtProcessItem.setEnabled(true);
 					jbtViewOrder.setEnabled(true);
 					jbtFinishOrder.setEnabled(true);
 					jbtConfirmItem.setEnabled(false);
 
-					// Update Button Text
+					//update counter
 					jbtProcessItem.setText("Process Item #" + (order.getTotalItems() + 1));
 					jbtConfirmItem.setText("Confirm Item #" + (order.getTotalItems() + 1));
 
-					// Update textFields boxes	
-					jtfItemID.setText(" ");
-					jtfQuantity.setText(" ");
-					jtfTotalItems.setText(" $" + new DecimalFormat("#0.00").format(order.getOrderSubtotal()));
+					//update textFields boxes	
+					jtfItemID.setText("");
+					jtfQuantity.setText("");
+					jtfTotalItems.setText("$" + new DecimalFormat("#0.00").format(order.getOrderSubtotal()));
 
-					// Update labels
+					//update labels
 					jlbSubtotal.setText("Order subtotal for " + order.getCurrentNumItems() + " item(s)");
 					jlbItemID.setText("Enter Item ID for Item #" + (order.getTotalItems() + 1) + ":");
 					jlbQuantity.setText("Enter quantity for Item #" + (order.getTotalItems() + 1) + ":");
@@ -254,7 +254,7 @@ public class NileDotCom extends JFrame {
 						el.printStackTrace();
 					}//close catch
 					
-					NileDotCom.super.dispose(); //closes when finishOrder
+					NileDotCom.super.dispose();
 				}//close actionPerformed
 			}); //close FinishOrder actionListener
 			
@@ -264,7 +264,7 @@ public class NileDotCom extends JFrame {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					
-					NileDotCom.super.dispose(); //restart when newOrder
+					NileDotCom.super.dispose();
 					try {
 						NileDotCom.main(null);
 					} catch (FileNotFoundException el) {
@@ -278,11 +278,11 @@ public class NileDotCom extends JFrame {
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					NileDotCom.super.dispose(); //close when exit
+					NileDotCom.super.dispose();
 				} //close action performed
 			}); //close exit actionListener
 		
-		}//close constructor
+		}//close interface constructor
 
 		//-------------------------Auxiliary Functions--------------------------//
 
@@ -335,12 +335,7 @@ public class NileDotCom extends JFrame {
 				inventory.add(currentItem);
 			}//close while
 			textFile.close(); //close scanner
-			
-			//test
-			//for(int i = 0 ; i < inventory.size(); i++){
-				//Item current = inventory.get(i);
-				//System.out.println(current.getItemID() + ", " + current.getName() + ", " + current.getPrice());
-			//}//close test
+
 		}//close inventoryFromFile
 		
 		//getInventory
@@ -353,10 +348,8 @@ public class NileDotCom extends JFrame {
 			this.inventory = inventory;
 		}//close setInventory
 			
-		//------------------------------------------------------------------//
+		//----------------------------MAIN FUNCTION--------------------------------------//
 		
-	
-
 	public static void main(String[] args) throws FileNotFoundException {
 		
 		NileDotCom frame = new NileDotCom();

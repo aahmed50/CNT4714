@@ -1,0 +1,11 @@
+230128232223, 14 , "Stanley #2 Philips Screwdriver", 6.95 , 2 , 0 , 13.9 , 01/28/23, 10:23:46 PM EST
+230128232223, 14909 , "1/4in - 28tpi SS nuts", 1.0 , 1 , 0 , 1.0 , 01/28/23, 10:23:46 PM EST
+230128232223, 2190 , "Hefty 30 gal with handles - box 40", 19.0 , 1 , 0 , 19.0 , 01/28/23, 10:23:46 PM EST
+230128232223, 1111 , "Top Secret Twenty One - Janet Evanovich", 8.99 , 1 , 0 , 8.99 , 01/28/23, 10:23:46 PM EST
+230128232225, 198 , "Box of 10 Sharpie Roller 0.5mm", 6.5 , 1 , 0 , 6.5 , 01/28/23, 10:25:38 PM EST
+230128232225, 268 , "Sidi Wire 2 carbon shoes", 499.99 , 1 , 0 , 499.99 , 01/28/23, 10:25:38 PM EST
+230128232225, 1111 , "Top Secret Twenty One - Janet Evanovich", 8.99 , 2 , 0 , 17.98 , 01/28/23, 10:25:38 PM EST
+230128232225, 14 , "Stanley #2 Philips Screwdriver", 6.95 , 1 , 0 , 6.95 , 01/28/23, 10:25:38 PM EST
+230128232228, 1111 , "Top Secret Twenty One - Janet Evanovich", 8.99 , 1 , 0 , 8.99 , 01/28/23, 10:28:14 PM EST
+230128232228, 387 , "Brachs butterscotch hard candy - 1 lb", 4.5 , 2 , 0 , 9.0 , 01/28/23, 10:28:14 PM EST
+230128232228, 198 , "Box of 10 Sharpie Roller 0.5mm", 6.5 , 12 , 15 , 11.7 , 01/28/23, 10:28:14 PM EST
