@@ -12,8 +12,16 @@
 
  <br>
 
- ### Project 2 |
+ ### Project 2 | Synchronized Multi-Threads
+ <p>
+ Problem Description: Banking Simulator <br>
+ An Application Employing Synchronized/Cooperating Multiple Threads In Java Using Locks – A Banking Simulator.
+ Develop  an  application  which  requires  cooperating,  synchronized multiple threads of execution. 
+ </p>
+
+ <br>
+
+ ### Project 3 | 
  <p>
  Problem Description: <br>
- 
  </p>
