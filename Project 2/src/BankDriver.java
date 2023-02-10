@@ -20,6 +20,8 @@ public class BankDriver {
 		//initialize simulator
 		ExecutorService application = Executors.newFixedThreadPool( MAX_AGENTS ); //executor object
 		
+		//initialize agents 
+		
 		//create bank account
 		//BankAccount Account = new BankAccount();
 		
@@ -27,6 +29,9 @@ public class BankDriver {
 		System.out.println("Deposit Agents\t\t\t   Withdrawal Agents\t\t\t   Balance");		
 		System.out.println("--------------\t\t\t   -----------------\t\t\t   -------");
 
+		//10 withdrawal threads, 5 deposit threads, 1 auditor thread
+	
+		
 		
 
 	}//close main
