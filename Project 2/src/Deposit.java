@@ -13,6 +13,7 @@ public class Deposit implements Runnable{
 	//private static Random sleepTime = new Random(); //once a depositor agent has deposited into the account, put it to sleep for few milliseconds
 	
 	private BankAccount Account; //reference to shared bank account object
+	//private int depositAmount;
 	private String threadName;
 	
 	public Deposit(BankAccount sharedAccount, String name) {
@@ -29,8 +30,7 @@ public class Deposit implements Runnable{
 				
 				Account.deposit(generator.nextInt(MAX_DEPOSIT-1+1)+1, threadName);
 				//sleep for random amount of milliseconds
-				Thread.sleep(generator.nextInt(300)); //sleep thread
-				
+				Thread.sleep(generator.nextInt(300)); //sleep thread				
 			} catch (InterruptedException exception) {
 				exception.printStackTrace();
 			}//close catch

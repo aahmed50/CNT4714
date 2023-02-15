@@ -12,5 +12,5 @@ public abstract interface BankBuffer {
 	//thread name, withdrawal amount
 	public void withdraw(int amount, String threadName); //read
 	
-	public void audit();
+	public void audit(int i, String threadName); //write
 }
