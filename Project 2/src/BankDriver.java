@@ -1,7 +1,7 @@
 /*  Name: Asma Ahmed  
      Course: CNT 4714 Spring 2023 
      Assignment title: Project 2 – Synchronized, Cooperating Threads Under Locking 
-     Due Date: February 12, 2023 
+     Due Date: February 15, 2023 
 */ 
 
 import java.util.concurrent.ExecutorService;
@@ -21,8 +21,8 @@ public class BankDriver {
 		BankAccount Account = new BankAccount(); //create bank account
 
 		//output
-				System.out.println("Deposit Agents\t\t\t   Withdrawal Agents\t\t\t   Balance");		
-				System.out.println("--------------\t\t\t   -----------------\t\t\t   -------");
+		System.out.println("Deposit Agents\t\t\t   Withdrawal Agents\t\t\t   Balance");		
+		System.out.println("--------------\t\t\t   -----------------\t\t\t   -------");
 
 		//10 withdrawal threads, 5 deposit threads, 1 auditor thread
 		//initialize agents 

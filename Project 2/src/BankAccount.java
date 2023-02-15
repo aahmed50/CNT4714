@@ -1,7 +1,7 @@
 /*  Name: Asma Ahmed  
      Course: CNT 4714 Spring 2023 
      Assignment title: Project 2 – Synchronized, Cooperating Threads Under Locking 
-     Due Date: February 12, 2023 
+     Due Date: February 15, 2023 
 */ 
 
 import java.util.concurrent.locks.Lock;
@@ -16,11 +16,11 @@ public class BankAccount implements BankBuffer{
 	
 	//lock to control mutually exclusive access to bank account
 	private Lock accessLock = new ReentrantLock();
-	private Condition canWithdraw = accessLock.newCondition(); //signal to waiting withdraw thread that deposit has been made
+	private Condition canWithdraw = accessLock.newCondition(); //signal to waiting withdraw thread
 	private Condition canDeposit = accessLock.newCondition(); //signal to waiting deposit thread 
 	
 	//variables
-	private int balance = 0;
+	private int balance = 0; //Start the simulation with a balance of $0
 	private static int transactionNumber = 0;
 	private static int transactionsSinceAudit = 0;
 	private static int auditCounter=0;
@@ -57,13 +57,13 @@ public class BankAccount implements BankBuffer{
 				auditCounter++;
 
 				//display balance
-				System.out.print(threadName+" deposits $"+amount);
+				System.out.print(threadName+" deposits $"+amount+"\t\t\t\t");
 				System.out.println("\t\t\t\t\t\t(+)  Balance is $"+balance+"\t\t\t\t\t\t\t\t" + transactionNumber);
 			}
 			
 			canWithdraw.signalAll(); //signal all waiting to make withdrawal
 		} catch(Exception exception) {
-			System.out.println("Exception thrown depositing");
+			exception.printStackTrace();
 		} finally {
 			accessLock.unlock();
 		}//close finally
@@ -100,7 +100,7 @@ public class BankAccount implements BankBuffer{
 			}//close else
 			canWithdraw.signalAll(); //signal all waiting to make withdrawal
 		} catch(Exception exception) {
-			System.out.println("Exception thrown withdrawing");
+			exception.printStackTrace();
 		} finally {
 			accessLock.unlock();
 		}//close finally
