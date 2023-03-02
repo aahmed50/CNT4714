@@ -21,7 +21,15 @@
 
  <br>
 
- ### Project 3 | 
+ ### Project 3 | Two-Tier Client-Server Application Development With MySQL and JDBC
+ <p>
+ Problem Description: A Two-tier Client-Server Application<br>
+ Develop  a  Java-based  GUI  front-end  (client-side) application that will connect to a MySQL server via JDBC.  
+ </p>
+
+ <br>
+
+ ### Project 4 | 
  <p>
  Problem Description: <br>
  </p>
