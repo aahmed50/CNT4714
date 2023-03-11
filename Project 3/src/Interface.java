@@ -35,23 +35,26 @@ public class Interface extends JFrame {
     private Connection connection;
     private MysqlDataSource dataSource = new MysqlDataSource();
  
-	//private JButton clearResultsButton, clearSQLButton, connectButton, executeButton;
-    //private JLabel databaseTitle, sqlTitle, tableTitle, driverLabel, urlLabel, userLabel, passLabel;
+	private JButton clearResultsButton, clearSQLButton, connectButton, executeButton;
+    private JLabel databaseTitle, sqlTitle, tableTitle, driverLabel, urlLabel, userLabel, passLabel;
 
     private JTextField connectionTextField, userTextField, passTextField;
     
-    private JScrollPane jScrollPane1, jScrollPane2;
+    private JScrollPane jScrollPane1;
+    private JScrollPane jScrollPane2;
 
     private JTable resultTable;
     private JTextArea sqlTextArea;
     
     private JComboBox driverDropDownBox;
     private JComboBox urlDropDownBox;
-			
+
+   @SuppressWarnings({ "unchecked", "rawtypes" })
+    
 			//GUI instance
 			public Interface() {
 				//drop down menu
-				String[] PropertiesItems = {"db.properties", "client.properties"};
+				//String[] PropertiesItems = {"db.properties", "client.properties"};
 				
 				JScrollPane jScrollPane1 = new JScrollPane();
 		        JTextArea sqlTextArea = new JTextArea();
@@ -263,7 +266,6 @@ public class Interface extends JFrame {
 			}//close interface
 			
 			private void connectButtonActionPerformed(ActionEvent evt) {//GEN-FIRST:event_connectButtonActionPerformed
-		        
 		        
 		        dataSource.setUser(userTextField.getText());
 		        dataSource.setPassword(passTextField.getText());
