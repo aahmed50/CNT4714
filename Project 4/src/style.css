@@ -1,0 +1,100 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    background-color:#b4e2d8ba;
+    font-family: 'raleway', sans-serif;
+    background-image: url("../logo.png");
+    background-repeat: no-repeat;
+    background-position: bottom 300% right 20%;
+    background-size: 500px;
+}
+
+.login{
+    width: 500px;
+    overflow: hidden;
+    margin: auto;
+    background: #9dc2bad9;
+    border-radius: 5px ;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.root{
+    width: 500px;
+    overflow: hidden;
+    margin: auto;
+    background: #a49dc2d9;
+    border-radius: 5px ;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.client{
+    width: 500px;
+    overflow: hidden;
+    margin: auto;
+    background: #6ea7c0d9;
+    border-radius: 5px ;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+h2{
+    text-align: center;
+    color: #277582;
+    margin: 0
+}
+
+label{
+    color:black;
+    font-size: 15px;
+    font-weight: lighter;
+    padding-left: 8px;
+    text-align: justify;
+}
+
+#username{
+    width: 200px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    padding-left: 8px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#password{
+    width: 200px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    padding-left: 8px;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+#auth{
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 17px;
+    padding-left: 7px;
+    color: rgb(64, 128, 128);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#console{
+    height: 20px;
+    border: none;
+    border-radius: 10px;
+    color: rgb(64, 128, 128);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+span{
+    color:#9dc2ba;
+    font-size: 17px;
+}
+
+a{
+    float: right;
+    background-color: grey;
+}

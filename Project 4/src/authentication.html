@@ -5,12 +5,45 @@ Name: Asma Ahmed
   Date: April 23, 2023
  
   Class:  authentication.html
-          to run this webapp all users begin on this landing pahe
+          to run this webapp all users begin on this landing page
 -->
 
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link rel="stylesheet" type="text/css" href="../src/style.css"/>
         <title> User Authentication </title>
     </head>
+
+    <body>
+        <div align="center">
+            <h1 style="font-size: x-large; font-weight: lighter;">
+                Spring 2023 Project 4
+            </h1>
+            <h2 style="font-size: xx-large;">
+                Enterprise System
+            </h2>
+            <h3 style="font-style: italic; font-size: medium;">
+                A Servlet/JSP Based Multi-Tiered Enterprise Application
+            </h3>
+        </div>
+        
+        <!--Login container-->
+        <div class="login" align="center">
+            <h3 style="font-family: 'raleway', sans-serif;">User Authentication Page</h3>
+            <!--connect to webapp; currently not possible
+            action = "../bin/WelcomeServlet.class"
+            -->
+            <form id="login" method="get" action="null"> 
+                <label >USERNAME</label>
+                <input type="text" name="username" id="username">
+                <br><br>
+                <label>PASSWORD</label>
+                <input type="Password" name="password" id="password">
+                <br><br>
+                <input type="button" name="auth" id="auth" value="Click to Authenticate">
+                <br><br>
+            </form>
+        </div>
+    </body>
 </html>

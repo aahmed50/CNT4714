@@ -11,5 +11,194 @@ Name: Asma Ahmed
 <html lang="en">
     <head>
         <title> dataentryHome </title>
+        <link rel="stylesheet" type="text/css" href="../src/style.css"/>
+
+        <style>
+          body {
+            background-color:#b4e2d8ba;
+            font-family: 'raleway', sans-serif;
+            background-image: url("../logo.png");
+            background-repeat: no-repeat;
+            background-position: bottom 300% right 20%;
+            background-size: 500px;}
+
+          div {margin-top: 1em; color:black}
+
+          fieldset {padding-top: 2em; padding-bottom: 0em; margin-bottom: 0em; margin-top: 1em; height: 11em; }
+          h1 {color:black; font-size:28pt;}
+          h2 {color: #277582; font-size:24pt;} 
+          input {color: black; background:#9dc2ba; font-weight: bold; font-size: 16pt; margin-right: auto; margin-left: auto;} 
+              input[type="text"] {width: 98%;}
+              input[type="submit"] {color: rgb(64, 128, 128); margin-top: 0.75em; margin-bottom: 3em;}
+              input[type="reset"] {color:  rgb(64, 128, 128); margin-top: 0.75em; }
+          legend {color: black; text-align: left;}
+          p {color:black; font-size:13pt;}
+          table{font-family: 'raleway', sans-serif; border: 3px solid #277582; margin-left: auto; margin-right: auto; width: 75%; }
+              th, td {padding: 5px; border: 1px solid #16434b; color: black; width: 20%;}
+          #bl {color: #708090;}
+          #results {background-color: green;}
+      </style>
+
+      <!-- connecting to a CDN to access latest JQuery library as of 11/1/2022 this was 3.6.1 -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"> </script>
+      <script type="text/javascript">
+        function eraseData() {
+          // next line illustrates a straight JavaScript technique
+          //document.getElementByID("data").innerHTML = "";
+          // next line illustrates a JQuery technique
+          $("#data").remove();
+        }
+      </script>
     </head>
+
+    <body>
+      <div align="center">
+        <h1 style="font-size: x-large; font-weight: lighter;">
+          Spring 2023 Project 4
+        </h1>
+        <h2 style="font-size: xx-large;">
+          Enterprise System
+        </h2>
+        <h3 style="font-style: italic; font-size: medium;">
+          A Servlet/JSP Based Multi-Tiered Enterprise Application
+        </h3>
+      </div>
+
+      <div align="center">
+        <p>You are connected to the Project 4 Enterprise System database as a [DATA-ENTRY] level user. <br />
+        <b>
+          Enter the data values in a form below to add a new record to the corresponding database table. </b>       
+        </p>
+        <br/>
+        </div>
+        <hr>
+
+        <div align="center">
+          <form action="AddSupplierRecord" method="post"> <!--onsubmit = "myFunction()" to fire JS script to retain form data -->
+            <fieldset>
+                <legend> Suppliers Record Insert </legend>
+                <table>
+                <thead>
+            <tr>
+              <th class="header-label" >Snum</th>
+              <th class="header-label">Sname</th>
+              <th class="header-label">Status</th>
+              <th class="header-label">City</th>
+            </tr>
+
+            <tr>
+              <th><input type="text" name="Snum_Supplier" id="Snum_Supplier"><%=Snum_Supplier%></th>
+              <th><input type="text"name="Sname_Supplier" id="Sname_Supplier"><%=Sname_Supplier%></th>
+              <th><input type="text"name="Stat" id="Stat"><%=Stat%></th>
+              <th><input type="text"name="Scity" id="Scity"><%=Scity%></th>
+            </tr>
+          </thead>
+                    <!-- elements for the suppliers table go here -->
+        
+          
+                </table>
+                <input type="submit" value="Enter Supplier Record Into Database" name="suppliersform"/> &nbsp; &nbsp; &nbsp; 
+                <input type="reset" value="Clear Data and Results" onclick="javascript:eraseData();" /> &nbsp; &nbsp; &nbsp; </fieldset>
+            </fieldset>
+        </form>
+      </div>
+        
+      <div align="center">
+        <form action="AddPartRecord" method="post">
+            <fieldset>
+                <legend>Parts Record Insert</legend> <table>
+                <table>
+                    <!-- elements for parts table go here -->
+                    <thead>
+            <tr>
+              <th class="header-label">Pnum</th>
+              <th class="header-label">Pname</th>
+              <th class="header-label">Color</th>
+              <th class="header-label">Weight</th>
+              <th class="header-label">City</th>
+            </tr>
+            <tr>
+        
+              <th><input type="text" name="pnu" id="pnu"><%=pnu%></th>
+              <th><input type="text" name="pna" id="pna"><%=pna%></th>
+              <th><input type="text" name="color" id="color"><%=color%></th>
+              <th><input type="text" name="weight" id="weight"><%=weight%></th>
+              <th><input type="text" name="pcity" id="pcity"><%=pcity%></th>
+            </tr>
+          </thead>
+
+                </table>
+                <input type="submit" value="Enter Part Record Into Database" name="partsform"/> &nbsp; &nbsp; &nbsp; 
+                <input type="reset" value="Clear Data and Results" onclick="javascript:eraseData();" /> &nbsp; &nbsp; &nbsp;
+            </fieldset>
+        </form>
+      </div>
+
+      <div align="center">
+        <form action="AddJobRecord" method="post">
+            <fieldset>
+                <legend>Jobs Record Insert</legend>
+                <table>
+                    <!-- elements for jobs table go here -->
+                    <thead>
+            <tr>
+              <th class="header-label">Jnum</th>
+              <th class="header-label">Jname</th>
+              <th class="header-label">numWorkers</th>
+              <th class="header-label">City</th>
+            </tr>
+            <tr>
+        
+              <th><input type="text" name="jnu" id="jnu"><%=jnu%></th>
+              <th><input type="text" name="jna" id="jna"><%=jna%></th>
+              <th><input type="text" name="nW" id="nW"><%=nW%></th>
+              <th><input type="text" name="jcity" id="jcity"><%=jcity%></th>
+            </tr>
+          </thead>
+                </table>
+                <input type="submit" value="Enter Job Record Into Database" name="jobsform"/> &nbsp; &nbsp; &nbsp;
+                <input type="reset" value="Clear Data and Results" onclick="javascript:eraseData();" /> &nbsp; &nbsp; &nbsp; </fieldset>
+            </fieldset>
+        </form>
+      </div>
+
+      <div align="center">
+        <form action="AddShipmentRecord" method="post">
+            <fieldset>
+                <legend>Shipments Record Insert</legend>
+                <table>
+                    <!-- elements for shipments record go here -->
+                    <thead>
+            <tr>
+              <th class="header-label">Snum</th>
+              <th class="header-label">Pnum</th>
+              <th class="header-label">Jnum</th>
+              <th class="header-label">Quantity</th>
+            </tr>
+            <tr>
+        
+              <th><input type="text" name="snum" id="snum"><%=snum%></th>
+              <th><input type="text" name="pnum" id="pnum"><%=pnum%></th>
+              <th><input type="text" name="jnum" id="jnum"><%=jnum%></th>
+              <th><input type="text" name="quant" id="quant"><%=quant%></th>
+            </tr>
+          </thead>
+                </table>
+                <input type="submit" value="Enter Shipment Record Into Database" name="shipments form"/> &nbsp; &nbsp; &nbsp; 
+                <input type="reset" value="Clear Data and Results" onclick="javascript:eraseData();" /> &nbsp; &nbsp; &nbsp; 
+            </fieldset>
+        </form>
+      </div>
+
+      <div align="center">
+        <h2>
+          Database Results:
+        </h2>
+        <div>
+          <%=result%>
+        </div>
+      </div>
+
+  </body>
+
 </html>
