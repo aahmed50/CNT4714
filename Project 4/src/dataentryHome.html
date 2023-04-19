@@ -8,6 +8,89 @@ Name: Asma Ahmed
 -->
 
 <!DOCTYPE html>
+<!--
+  <%
+    String message = (String) session.getAttribute("message");
+    if (message == null) message = "";
+		
+		
+		String textBox = (String) session.getAttribute("textBox");
+	    String result = (String) session.getAttribute("result");
+	    
+	    // supplier
+	    String Snum_Supplier = (String) session.getAttribute("Snum_Supplier");
+	    String Sname_Supplier = (String) session.getAttribute("Sname_Supplier");
+		String Stat = (String) session.getAttribute("Stat");
+		String Scity = (String) session.getAttribute("Scity");
+		
+		// parts
+		String pnu = (String) session.getAttribute("pnu");
+		String pna = (String) session.getAttribute("pna");
+		String color = (String) session.getAttribute("color");
+		String weight = (String) session.getAttribute("weight");
+		String pcity = (String) session.getAttribute("pcity");
+		
+		//jobs
+		
+		String jnu = (String) session.getAttribute("jnu");
+		String jna = (String) session.getAttribute("jna");
+		String nW = (String) session.getAttribute("nW");
+		String jcity = (String) session.getAttribute("jcity");
+		
+		if (jnu == null) pnu = "";
+	    if (jna == null) pna = "";
+	    if (nW == null) nW = "";
+	    if (jcity == null) jcity = "";
+	    
+	    
+		//shipments
+		String snum = (String) session.getAttribute("snum");
+		String pnum = (String) session.getAttribute("pnum");
+		String jnum = (String) session.getAttribute("jnum");
+		String quant = (String) session.getAttribute("quant");
+		
+		
+		if (snum == null) snum = "";
+	    if (pnum == null) pnum = "";
+	    if (jnum == null) jnum = "";
+	    if (quant == null) quant = "";
+		
+	    if (pnu == null) pnu = "";
+	    if (pna == null) pna = "";
+	    if (color == null) color = "";
+	    if (weight == null) weight = "";
+	    if (pcity == null) pcity = "";
+		
+		if (Sname_Supplier == null) 
+	    {
+		    Sname_Supplier = " ";
+	    }
+		if (Stat == null) 
+	    {
+		    Stat = " ";
+	    }
+		if (Scity == null) 
+	    {
+		    Scity = " ";
+	    }
+	    if (result == null) 
+	    {
+		    result = " ";
+	    }
+
+
+	    if (Snum_Supplier == null) 
+	    {
+		    Snum_Supplier = " ";
+	    }
+	    if (textBox == null) 
+	    {
+	        textBox = " ";
+	    }
+		
+    %>
+-->
+
 <html lang="en">
     <head>
         <title> dataentryHome </title>
@@ -73,6 +156,7 @@ Name: Asma Ahmed
         </div>
         <hr>
 
+        <!--SUPPLIER RECORD INSERT FORM-->
         <div align="center">
           <form action="AddSupplierRecord" method="post"> <!--onsubmit = "myFunction()" to fire JS script to retain form data -->
             <fieldset>
@@ -102,7 +186,8 @@ Name: Asma Ahmed
             </fieldset>
         </form>
       </div>
-        
+      
+      <!--PARTS RECORD INSERT FORM-->
       <div align="center">
         <form action="AddPartRecord" method="post">
             <fieldset>
@@ -134,6 +219,7 @@ Name: Asma Ahmed
         </form>
       </div>
 
+      <!--JOBS RECORD INSERT FORM-->
       <div align="center">
         <form action="AddJobRecord" method="post">
             <fieldset>
@@ -162,6 +248,7 @@ Name: Asma Ahmed
         </form>
       </div>
 
+      <!--SHIPMENTS RECORD INSERT FORM-->
       <div align="center">
         <form action="AddShipmentRecord" method="post">
             <fieldset>
