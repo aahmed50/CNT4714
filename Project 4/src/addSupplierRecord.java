@@ -4,7 +4,8 @@
   Assignment title: A Three-Tier Distributed Web-Based Application
   Date: April 23, 2023
  
-  Class:  Project4 (functions like a rootUserApp)
+  Class:  addPartRecord servlet class 
+  data entry for supplier of user to records
 */ 
 
 import java.io.IOException;
@@ -25,61 +26,56 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 @SuppressWarnings({ "serial"})
-public class Project4 extends HttpServlet{
-    private Connection database_Connection;
+
+public class addSupplierRecord extends HttpServlet{
+	private Connection database_Connection;
     private Statement database_statement;
 
     @Override
     public void init(ServletConfig s_conf) throws ServletException {
         super.init(s_conf);
+       
         try {
+        	
             Class.forName("com.mysql.cj.jdbc.Driver");
-            database_Connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/project4", "root", "password"); //may need to be relinked
+
+            database_Connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/project4", "root", "password");
             database_statement = database_Connection.createStatement();
-        } //end try
+        } //close try
 
         catch (Exception e) {
             e.printStackTrace();
             throw new UnavailableException(e.getMessage());
-        } //end catch
-    } //end initialize
+        } //close catch
+    } //close initialize
 
     protected void doGet( HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String input = request.getParameter("textBox");
-        String result = null;
+        String Snum = request.getParameter("Snum_Supplier");
+        String Snam = request.getParameter("Sname_Supplier");
+        String Stat = request.getParameter("Stat");
+        String Scity = request.getParameter("Scity");
         
-        if(input.toLowerCase().contains("select")) {
-        	 try {
-                 result = do_select(input);
-             } //end try
+        String result = null;
 
-             catch(SQLException e) {
-                 result = "<span>" + e.getMessage() + "</span>";
-                 e.printStackTrace();
-             } //end catch
-        } //end if
-
-        else {
             try {
-                result = do_Update(input);
-            } //end try
+                result = do_update(Snum,Snam,Stat,Scity);
+            } //doGet
 
             catch(SQLException e) {
                 result = "<span>" + e.getMessage() + "</span>";
                 e.printStackTrace();
-            } //end catch           
-        } //end else
-
+            } //close catch
+        
         HttpSession session = request.getSession();
         session.setAttribute("result", result);
-        session.setAttribute("textbox", input);
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/rootHome.jsp");
+        session.setAttribute("textbox", Snum);
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/dataentryHome.jsp");
         dispatcher.forward(request, response);
-    } //end doGet 
+    } //close doGet
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
         doGet(request, response);
-    } //end doPost
+    } //close doPost
 
     public String do_select(String input) throws SQLException {
         int n_column = 0, i = 1;
@@ -90,10 +86,9 @@ public class Project4 extends HttpServlet{
         n_column = data.getColumnCount();
 
         while(i <= n_column) {
-        	
             res_out += "<th scope = 'col'>" + data.getColumnName(i) + "</th>";
             i++;
-        }  //end while
+        } //close while
         
         res_out = res_out + "</tr></thead><tbody>";
 
@@ -102,29 +97,29 @@ public class Project4 extends HttpServlet{
             for (i = 1; i <= n_column; i++) {
                 if(i != 1) {
                     res_out += "<td>" + R_Set.getString(i) + "</th>";
-                } //end 
+                } //close if
 
                 else {
                     res_out += "<td scope'row'>" + R_Set.getString(i) + "</th>";
-                }// close else
-            }//close for
+                } //close else
+            } //close for loop
             res_out += "</tr>";
-        }//close while
+        } //close while loop
         res_out += "</tbody>";
         
         res_out += close_table;
-
         return res_out;
-    }//end do_select
+        
+    }//close do__select
 
-    private String do_Update(String input) throws SQLException {
+    private String do_update(String snum, String sname, String status, String city) throws SQLException {
         String res_out = "<div> The statement executed successfully.</div><div>";
         int row_updates = 0;
 
-        row_updates = database_statement.executeUpdate(input);
+        row_updates = database_statement.executeUpdate("insert into suppliers values("+ "'"  +snum + "'" + "," + "'"+sname+"'"+ ","+"" +status+"" + ","+"'" +city+"'"+ ")");
         res_out += row_updates + " row(s) affected</div><div>";
-
+        
         return res_out;
 
-    }//end do_Update
-}//close class Project4
+    } //close do_update
+} //close addSupplierRecord
