@@ -27,16 +27,18 @@ import jakarta.servlet.http.HttpSession;
 
 @SuppressWarnings({ "serial", "unused" })
 public class clientUserApp extends HttpServlet {
+	
 	private Connection database_Connection;
     private Statement database_statement;
 
     @Override
     public void init(ServletConfig s_conf) throws ServletException {
         super.init(s_conf);
+        
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            database_Connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/project4", "client", "client");
+            database_Connection = DriverManager.getConnection("dbc:mysql://localhost:3312/Project4", "client", "client");
             database_statement = database_Connection.createStatement();
         } //end try
 

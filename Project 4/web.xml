@@ -2,10 +2,28 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" id="WebApp_ID" version="5.0">
   <display-name> Project 4 Enterprise Systems | CNT 4714 </display-name>
 
+  <welcome-file-list>
+    <welcome-file>authentication.html</welcome-file>
+  </welcome-file-list>
+
+    <welcome-file-list>
+    <welcome-file>error.html</welcome-file>
+  </welcome-file-list>
 
   <welcome-file-list>
-    <welcome-file>RootUser.jsp</welcome-file>
+    <welcome-file>rootHome.jsp</welcome-file>
   </welcome-file-list>
+
+  <!--For the Authentication-->
+  <servlet>
+  <servlet-name>authentication</servlet-name>
+  <servlet-class>authentication</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>authentication</servlet-name>
+    <url-pattern>authentication</url-pattern>
+  </servlet-mapping>
 
   <servlet>
     <servlet-name>Project4</servlet-name>
@@ -19,69 +37,69 @@
 
     <!--For the Root User Application-->
   <servlet>
-    <servlet-name>RootUserApp</servlet-name>
-    <servlet-class>RootUserApp</servlet-class>
+    <servlet-name>rootUserApp</servlet-name>
+    <servlet-class>rootUserApp</servlet-class>
   </servlet>
 
   <servlet-mapping>
-    <servlet-name>RootUserApp</servlet-name>
-    <url-pattern>/RootUserApp</url-pattern>
+    <servlet-name>rootUserApp</servlet-name>
+    <url-pattern>/rootUserApp</url-pattern>
   </servlet-mapping>
 
     <!--For the Client User Application-->
   <servlet>
-    <servlet-name>ClientUserApp</servlet-name>
-    <servlet-class>ClientUserApp</servlet-class>
+    <servlet-name>clientUserApp</servlet-name>
+    <servlet-class>clientUserApp</servlet-class>
   </servlet>
 
   <servlet-mapping>
-    <servlet-name>ClientUserApp</servlet-name>
-    <url-pattern>/ClientUserApp</url-pattern>
+    <servlet-name>clientUserApp</servlet-name>
+    <url-pattern>/clientUserApp</url-pattern>
   </servlet-mapping>
 
  
     <!--For the Data Entry User Add Suppliers Record-->
   <servlet>
-    <servlet-name>AddSupplierRecord</servlet-name>
-    <servlet-class>AddSupplierRecord</servlet-class>
+    <servlet-name>addSupplierRecord</servlet-name>
+    <servlet-class>addSupplierRecord</servlet-class>
   </servlet>
 
   <servlet-mapping>
-    <servlet-name>AddSupplierRecord</servlet-name>
-    <url-pattern>/AddSupplierRecord</url-pattern>
+    <servlet-name>addSupplierRecord</servlet-name>
+    <url-pattern>/addSupplierRecord</url-pattern>
   </servlet-mapping>
 
     <!--For the Data Entry User Add Parts Record-->
   <servlet>
-    <servlet-name>AddPartRecord</servlet-name>
-    <servlet-class>AddPartRecord</servlet-class>
+    <servlet-name>addPartRecord</servlet-name>
+    <servlet-class>addPartRecord</servlet-class>
   </servlet>
 
   <servlet-mapping>
-    <servlet-name>AddPartRecord</servlet-name>
-    <url-pattern>/AddPartRecord</url-pattern>
+    <servlet-name>addPartRecord</servlet-name>
+    <url-pattern>/addPartRecord</url-pattern>
   </servlet-mapping>
 
 <!--For the Data Entry User Add Job Record-->
   <servlet>
-    <servlet-name>AddJobRecord</servlet-name>
-    <servlet-class>AddJobRecord</servlet-class>
+    <servlet-name>addJobRecord</servlet-name>
+    <servlet-class>addJobRecord</servlet-class>
   </servlet>
 
   <servlet-mapping>
-    <servlet-name>AddJobRecord</servlet-name>
-    <url-pattern>/AddJobRecord</url-pattern>
+    <servlet-name>addJobRecord</servlet-name>
+    <url-pattern>/addJobRecord</url-pattern>
   </servlet-mapping>
 
     <!--For the Data Entry User Add Shipping Record-->
   <servlet>
-    <servlet-name>AddShipmentRecord</servlet-name>
-    <servlet-class>AddShipmentRecord</servlet-class>
+    <servlet-name>addShipmentRecord</servlet-name>
+    <servlet-class>addShipmentRecord</servlet-class>
   </servlet>
 
   <servlet-mapping>
-    <servlet-name>AddShipmentRecord</servlet-name>
-    <url-pattern>/AddShipmentRecord</url-pattern>
+    <servlet-name>addShipmentRecord</servlet-name>
+    <url-pattern>/addShipmentRecord</url-pattern>
   </servlet-mapping>
 
 </web-app>

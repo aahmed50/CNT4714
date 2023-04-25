@@ -38,7 +38,7 @@ public class addShipmentRecord extends HttpServlet{
         try {	
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            database_Connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/project4", "root", "password");
+            database_Connection = DriverManager.getConnection("dbc:mysql://localhost:3312/Project4", "root", "password");
             database_statement = database_Connection.createStatement();
         }//close try
 

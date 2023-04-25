@@ -34,7 +34,7 @@ public class Project4 extends HttpServlet{
         super.init(s_conf);
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            database_Connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/project4", "root", "password"); //may need to be relinked
+            database_Connection = DriverManager.getConnection("dbc:mysql://localhost:3312/Project4", "root", "password"); //may need to be relinked
             database_statement = database_Connection.createStatement();
         } //end try
 
