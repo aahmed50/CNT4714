@@ -4,10 +4,12 @@ Name: Asma Ahmed
   Assignment title: A Three-Tier Distributed Web-Based Application
   Date: April 23, 2023
  
-  Class:  rootHome.html
+  Class:  rootHome.jsp
 -->
 
-<!--
+
+<!DOCTYPE html>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
@@ -24,13 +26,29 @@ Name: Asma Ahmed
          textBox = " ";
     }   
 %>
--->
 
-<!DOCTYPE html>
 <html lang="en">
     <head>
         <title> rootHome </title>
         <link rel="stylesheet" type="text/css" href="../src/style.css"/>
+
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script type = "text/javascript">
+            function eraseText() {
+                // <!-- next line illustrates a straight JavaScript technique
+                // document.getElementById("cmd").innerHTML=" ";
+                // next line illustrates a JQuery technique
+                $("#cmd").html("");
+            }
+        </script>
+        <script type = "text/javascript"> 
+            function eraseData() {
+                // next line illustrates a straight JavaScript technique
+                // document. getElementByID ("data") , innerHTML = .:
+                // next line illustrates a JQuery technique
+                $("#data").remove();
+            }
+        </script>
     </head>
 
     <body>

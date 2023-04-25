@@ -150,7 +150,7 @@ Name: Asma Ahmed
       <div align="center">
         <p>You are connected to the Project 4 Enterprise System database as a [DATA-ENTRY] level user. <br />
         <b>
-          Enter the data values in a form below to add a new record to the corresponding database table. </b>       
+          Enter data values in a form below to add a new record to the corresponding database table. </b>       
         </p>
         <br/>
         </div>

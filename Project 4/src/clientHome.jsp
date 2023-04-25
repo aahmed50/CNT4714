@@ -4,14 +4,48 @@ Name: Asma Ahmed
   Assignment title: A Three-Tier Distributed Web-Based Application
   Date: April 23, 2023
  
-  Class:  clientHome.html
+  Class:  clientHome.jsp
 -->
 
 <!DOCTYPE html>
+
+<%
+	String textBox = (String) session.getAttribute("textBox");
+    String result = (String) session.getAttribute("result");
+
+    if (result == null) 
+    {
+	    result = " ";
+    }
+    if (textBox == null) 
+    {
+        textBox = " ";
+    }
+    
+%>
+
 <html lang="en">
     <head>
       <title> clientHome </title>
       <link rel="stylesheet" type="text/css" href="../src/style.css" />
+
+      <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script type = "text/javascript">
+            function eraseText() {
+                // <!-- next line illustrates a straight JavaScript technique
+                // document.getElementById("cmd").innerHTML=" ";
+                // next line illustrates a JQuery technique
+                $("#cmd").html("");
+            }
+        </script>
+        <script type = "text/javascript"> 
+            function eraseData() {
+                // next line illustrates a straight JavaScript technique
+                // document. getElementByID ("data") , innerHTML = .:
+                // next line illustrates a JQuery technique
+                $("#data").remove();
+            }
+        </script>
     </head>
     
     <body>
@@ -30,7 +64,7 @@ Name: Asma Ahmed
       </div>
     
       <div class="client" align="center">
-        <form action=null method="post" style="margin-top: 15px;">
+        <form action="clientUserApp.java" method="post" style="margin-top: 15px;">
           <div>
             <p style="margin-left: 10px; margin-right: 10px;">
               You are connected to the Project 4 Enterprise System Database as a [CLIENT] level user. <br><br>
