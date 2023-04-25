@@ -14,7 +14,7 @@ import java.io.*;
 import javax.swing.JOptionPane;
 
 
-public class authenticationServlet extends HttpServlet{
+public class authenticationServlet extends HttpServlet {
 
 	//process get request
 	@Override
@@ -53,11 +53,11 @@ public class authenticationServlet extends HttpServlet{
 	
 	if(userCredentialsOK) {
 		//redirect
-		response.sendRedirect( "/clientHome" );
+		response.sendRedirect( "/Project4/clientHome.jsp" );
 	}//close if
 	else {
 		//redirect to error page
-		response.sendRedirect( "/errorpage" );
+		response.sendRedirect( "/errorpage.html" );
 	}//end else
 		
 	}//end doGet() method
