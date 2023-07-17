@@ -33,13 +33,14 @@ Enterprise computing architectures with an emphasis on networked, distributed ap
  </p>
 
 ![Alt text](<project 3 v2/Cover Photo.png>)
+
 <br>
 
 ### Project 4 | Three-Tier Distributed Web-Based Application
  <p>
- Problem Description: A Three-Tier Distributed Web-Based        Application using servlets running on a Tomcat Server to access MSQL database via JDBC<br>
+ Problem Description: A Three-Tier Distributed Web-Based Application using servlets running on a Tomcat Server to access MSQL database via JDBC<br>
  
- **APPLICATION ARCHITECTURE: **
+ <b>APPLICATION ARCHITECTURE: </b>
  
  Tier 1: [User-Level Front End] Consisting of a HTML landing page to authenticate end users. Handled via servlet in the webapp to validate user entered credentials.
         JSP page that allows client to enter SQL commands into a window and submit to server application. 
