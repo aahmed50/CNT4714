@@ -11,7 +11,7 @@ Enterprise computing architectures with an emphasis on networked, distributed ap
     Java program that creates a standalone GUI application that simulates an e-store which allows the user to add in stock items to a shopping cart and once all items are included, total all costs (including tax), produces an invoice, and append a transaction log file. 
  </p>
 
-![Project 1](<EventDrivenEnterprise/Cover Photo.png>)
+![Project 1](<Project 1/Cover Photo.png>)
 
 <br>
 
